@@ -34,5 +34,15 @@ describe("Register for user", () => {
     signupPage.fillUserInfo(newUserData);
 
     cy.contains("Account Created!").should("be.visible");
+
+    let loginCredentials = {
+      email : newUserData.email,
+      password: newUserData.password,
+      name : newUserData.firstName + ' ' + newUserData.lastName
+    }
+
+    cy.writeFile('cypress/fixtures/login.json',loginCredentials)
+
+
   });
 });

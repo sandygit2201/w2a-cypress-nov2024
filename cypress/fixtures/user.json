@@ -1,0 +1,22 @@
+{
+  "email": "c9d0edff-3def-449c-8a4b-52330a6f6625Parker32@gmail.com",
+  "password": "Passw0rd",
+  "name": "Gertrude Kihn",
+  "billingAddress":{
+    "lastname" : ". Gertrude Kihn",
+    "postcode":"city 1 state 1 12345"
+  },
+  "deliveryAddress":{
+    "lastname" : ". Gertrude Kihn",
+    "country":"Australia"
+  },
+  "card":{
+    "nameOnCard":"Gertrude Kihn",
+    "cardNumber":"1234345656787890",
+    "cvv":"123",
+    "expiryMonth":"2030",
+    "expiryYear":"2030"
+  }
+
+
+}
