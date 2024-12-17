@@ -8,6 +8,11 @@ class HomePage {
     // verify that login page is loaded
     cy.get('[action="/login"]').should("be.visible");
   }
+
+  navigateToProductsPage(){
+    cy.get('[href="/products"]').click()
+    cy.contains('All Products').should('be.visible')
+  }
 }
 
 export default new HomePage();

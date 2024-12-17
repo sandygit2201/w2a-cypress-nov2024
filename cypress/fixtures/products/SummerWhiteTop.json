@@ -1,7 +1,7 @@
 {
-    "Category": "Women > Tops",
-    "Availability": "In Stock",
-    "Condition": "New",
-    "Brand": "H&M",
-    "price":600
+    "category": "Category: Women > Tops",
+    "availability": "Availability:In Stock",
+    "condition": "New",
+    "brand": "H&M",
+    "price":"Rs. 400"
 }

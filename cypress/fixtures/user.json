@@ -11,9 +11,9 @@
     "country":"Australia"
   },
   "card":{
-    "nameOnCard":"Gertrude Kihn",
+    "name":"Gertrude Kihn",
     "cardNumber":"1234345656787890",
-    "cvv":"123",
+    "cvc":"123",
     "expiryMonth":"2030",
     "expiryYear":"2030"
   }

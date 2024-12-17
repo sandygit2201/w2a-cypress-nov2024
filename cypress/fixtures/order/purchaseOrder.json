@@ -3,6 +3,10 @@
     "products":[{
         "name":"Summer White Top",
         "quantity":2
+    },
+    {
+        "name":"Men Tshirt",
+        "quantity":3
     }],
     "totalAmount":"1200"
 
