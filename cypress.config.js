@@ -6,6 +6,7 @@ export default defineConfig({
     chromeWebSecurity:false,
     watchForFileChanges:false,
     video:false,
+    downloadsFolder:"cypress/fixtures/downloads",
     pageLoadTimeout:90000,
     setupNodeEvents(on, config) {
       // implement node event listeners here

@@ -1,9 +1,5 @@
-import homePage from "../../support/pages/homePage";
-import loginPage from "../../support/pages/loginPage";
+describe('search product',()=>{
 
-describe("Login Page Tests", () => {
-  it("login as valid user", () => {
-    // navigate to base url
     cy.visit("/");
     homePage.verifyHomePageIsLoaded();
     // navigate to login page
@@ -15,5 +11,12 @@ describe("Login Page Tests", () => {
       cy.wait(5000);
       cy.get(".fa-user+b").should("have.text", loginData.name);
     });
-  });
-});
+
+    homePage.navigateToProductsPage()
+    
+    cy.fixture('order/purchaseOrder').then((orderInfo)=>{
+      productsPage.searchProduct(orderInfo.products[0].name)
+      productsPage.clickOnViewProduct()
+    })
+
+})
