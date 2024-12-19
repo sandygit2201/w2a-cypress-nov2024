@@ -6,51 +6,71 @@ import productDetailsPage from "../../support/pages/productDetailsPage";
 import productsPage from "../../support/pages/productsPage";
 import viewCartPage from "../../support/pages/viewCartPage";
 
-describe("end to end scearnio",()=>{
+describe("end to end scearnio", () => {
+  it("Place an order with a product", () => {
+    // visit base url
+    cy.visit("/");
+    homePage.verifyHomePageIsLoaded();
+    // navigate to login page
+    homePage.navigateToLogin_SignUpPage();
+    // read data from json file and login
+    cy.fixture("user").then((loginData) => {
+      loginPage.login(loginData);
+      cy.wait(5000);
+      cy.get(".fa-user+b").should("have.text", loginData.name);
+    });
 
-    it("Place an order with a product",()=>{
+    // navigate to product page
+    homePage.navigateToProductsPage();
 
-        cy.visit("/");
-        homePage.verifyHomePageIsLoaded()
-        // navigate to login page
-        homePage.navigateToLogin_SignUpPage();
-        // read data from json file and login
-        cy.fixture("user").then((loginData) => {
-          
-          loginPage.login(loginData);
-          cy.wait(5000);
-          cy.get(".fa-user+b").should("have.text", loginData.name);
-        });
+    // Read purchase order details from fixture and add view product
+    cy.fixture("order/purchaseOrder").then((orderInfo) => {
+      productsPage.searchProduct(orderInfo.products[0].name);
+      productsPage.clickOnViewProduct();
+    });
 
-        homePage.navigateToProductsPage()
-        
-        cy.fixture('order/purchaseOrder').then((orderInfo)=>{
-          productsPage.searchProduct(orderInfo.products[0].name)
-          productsPage.clickOnViewProduct()
-        })
+    // verify product info based on ref fixture file
+    productDetailsPage.verifyProductInfo("products/SummerWhiteTop.json");
 
-        productDetailsPage.verifyProductInfo('products/SummerWhiteTop.json')
+    // update product qty
 
-        productDetailsPage.updateProductQuantityAndAddToCart('2')
+    cy.fixture("order/purchaseOrder").then((orderInfo) => {
+      productDetailsPage.updateProductQuantityAndAddToCart(
+        orderInfo.products[0].quantity
+      );
+      //  Verify popup
+      productDetailsPage.clickOnViewCartOnPopup();
 
-        productDetailsPage.clickOnViewCartOnPopup()
+      let cartDetails = {
+        total:
+          "Rs. " + orderInfo.products[0].quantity * orderInfo.products[0].price,
+        quantity: orderInfo.products[0].quantity,
+      };
 
-        let cartDetails ={
+      // verify cart details
+      viewCartPage.verifyCartDetails(cartDetails);
+    });
 
-          total:'Rs. 800',
-          quantity:'2'
-        }
+    // validate billing and delivery address
 
-        viewCartPage.verifyCartDetails(cartDetails)
+    //checkout
+    viewCartPage.clickOnProceedToCheckout();
 
-        viewCartPage.clickOnProceedToCheckout()
+    checkoutPage.clickOnPlaceOrder();
 
-        checkoutPage.clickOnPlaceOrder();
+    // fill payment details from user.json fixture
+    paymentPage.fillPaymentDetail("user.json");
 
-        paymentPage.fillPaymentDetail('user.json')
+    // verify order conformation
+    cy.contains("Congratulations! Your order has been confirmed!").should(
+      "be.visible"
+    );
 
-        cy.contains('Congratulations! Your order has been confirmed!').should('be.visible')
 
-    })
-    
-})
+    // download invoice 
+
+    cy.contains('Download Invoice').click()
+
+
+  });
+});

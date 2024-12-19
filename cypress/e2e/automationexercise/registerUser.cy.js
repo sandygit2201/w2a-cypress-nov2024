@@ -1,15 +1,15 @@
 import { faker } from "@faker-js/faker";
-import { v4 as uuidv4 } from "uuid";
 import loginPage from "../../support/pages/loginPage";
 import signupPage from "../../support/pages/signupPage";
+import uuidUtils from "../../support/utils/uuidUtils";
 
 describe("Register for user", () => {
   it("Register new user", () => {
 
     let newUserData = {
       firstName: faker.person.firstName(),
-      lastName: faker.person.lastName(),
-      email: uuidv4() + faker.internet.email(),
+      lastName: faker.person.lastName(), 
+      email : uuidUtils.getRandomString() +  faker.internet.email(),
       password: "Passw0rd",
       dobday: "12",
       dobMonth: "July",
