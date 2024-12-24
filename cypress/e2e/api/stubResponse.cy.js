@@ -33,16 +33,12 @@ describe("Get user", () => {
        
     }
 
-    
     cy.intercept("GET","https://reqres.in/api/users/2",mockedReponse)
     cy.visit("https://reqres.in/");
     cy.intercept("https://reqres.in/api/users/2").as('getUser')
     cy.get('[data-id="users-single"]').click();
-
     cy.wait('@getUser').its('response').then((response)=>{
-
         cy.log('Response Body::'+ JSON.stringify(response.body))
-
     })
   });
 });

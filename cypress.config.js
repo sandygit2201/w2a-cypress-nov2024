@@ -5,6 +5,7 @@ export default defineConfig({
     baseUrl:'https://www.automationexercise.com',
     chromeWebSecurity:false,
     watchForFileChanges:false,
+    cacheAcrossSpecs:true,
     video:false,
     downloadsFolder:"cypress/fixtures/downloads",
     pageLoadTimeout:90000,

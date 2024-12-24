@@ -1,11 +1,6 @@
-import { v4 as uuidv4 } from "uuid";
-import loginPage from "../support/pages/loginPage";
-import homePage from "../support/pages/homePage";
+import { v4 as uuidv4 } from "uuid"; 
 
-//  Create user account through API and delete user account from UI 
-
-describe("Create Account API Test", () => {
-  it("should create an account successfully", () => {
+Cypress.Commands.add("createUser", (email, password) => {
     let userEmail = uuidv4() + "johndoe@example.com";
     const url = "https://automationexercise.com/api/createAccount";
     const data = {
@@ -37,25 +32,7 @@ describe("Create Account API Test", () => {
       body: new URLSearchParams(data).toString(),
     }).then((response) => {
       cy.log(JSON.stringify(response));
-
       cy.log(JSON.stringify(response.body));
     });
-
-    cy.visit("/");
-    homePage.verifyHomePageIsLoaded();
-    homePage.navigateToLogin_SignUpPage();
-
-    let loginData = {
-      email: userEmail,
-      password: "SecurePassword123",
-    };
-
-    loginPage.login(loginData);
-
-    cy.contains("Delete Account").click();
-
-    cy.contains("Your account has been permanently deleted!").should(
-      "be.visible"
-    );
   });
-});
+  

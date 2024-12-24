@@ -16,6 +16,8 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import '@faker-js/faker'
+import './customCommands/loginCommands'
+import './customCommands/apiCustomCommands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
