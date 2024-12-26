@@ -1,7 +1,22 @@
 1. login to different env 
+2. Blur and foucs
+3. add scripts to get all products in the page
+4. tick 
+5. Example for debug
+6. doucment example 
+7. origin example 
+8. screenshot 
+9. spread
+10. task
+11. cypress cloud 
+12. cucumber 
+13. running tests through command prompt 
+14. Cypress.env
 
 
 
 
-Need to write scripts for 
-1. download invoice and verity content 
+
+
+
+
