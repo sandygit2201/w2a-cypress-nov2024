@@ -66,11 +66,8 @@ describe("end to end scearnio", () => {
       "be.visible"
     );
 
+    // download invoice
 
-    // download invoice 
-
-    cy.contains('Download Invoice').click()
-
-
+    cy.contains("Download Invoice").click();
   });
 });

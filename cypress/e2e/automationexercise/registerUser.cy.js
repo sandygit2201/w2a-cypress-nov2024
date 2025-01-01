@@ -5,11 +5,10 @@ import uuidUtils from "../../support/utils/uuidUtils";
 
 describe("Register for user", () => {
   it("Register new user", () => {
-
     let newUserData = {
       firstName: faker.person.firstName(),
-      lastName: faker.person.lastName(), 
-      email : uuidUtils.getRandomString() +  faker.internet.email(),
+      lastName: faker.person.lastName(),
+      email: uuidUtils.getRandomString() + faker.internet.email(),
       password: "Passw0rd",
       dobday: "12",
       dobMonth: "July",
@@ -17,7 +16,7 @@ describe("Register for user", () => {
       checkSignUp: true,
       company: "abcd",
       country: "Australia",
-      address: uuidv4(),
+      address: "w2a",
       state: "state 1",
       city: "city 1",
       zipcode: "12345",
@@ -36,13 +35,11 @@ describe("Register for user", () => {
     cy.contains("Account Created!").should("be.visible");
 
     let loginCredentials = {
-      email : newUserData.email,
+      email: newUserData.email,
       password: newUserData.password,
-      name : newUserData.firstName + ' ' + newUserData.lastName
-    }
+      name: newUserData.firstName + " " + newUserData.lastName,
+    };
 
-    cy.writeFile('cypress/fixtures/login.json',loginCredentials)
-
-
+    cy.writeFile("cypress/fixtures/login.json", loginCredentials);
   });
 });

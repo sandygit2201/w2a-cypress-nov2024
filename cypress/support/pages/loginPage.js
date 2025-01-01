@@ -7,7 +7,7 @@ class loginPage {
     }
 
     login(userData){
-        cy.get('[data-qa="login-email"]').type(userData.email)
+        cy.get('[data-qa="login-email"]').type(userData.username)
         cy.get('[data-qa="login-password"]').type(userData.password)
         cy.get('[data-qa="login-button"]').click()
     }

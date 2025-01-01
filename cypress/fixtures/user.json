@@ -1,22 +1,20 @@
 {
-  "email": "c9d0edff-3def-449c-8a4b-52330a6f6625Parker32@gmail.com",
-  "password": "Passw0rd",
-  "name": "Gertrude Kihn",
-  "billingAddress":{
-    "lastname" : ". Gertrude Kihn",
-    "postcode":"city 1 state 1 12345"
+  "username": "6e5d917f-96c9-46ee-9f7c-19708efec33ajohndoe@example.com",
+  "password": "SecurePassword123",
+  "name": "John Doe",
+  "billingAddress": {
+    "lastname": ". John Doe",
+    "postcode": "city 1 state 1 12345"
   },
-  "deliveryAddress":{
-    "lastname" : ". Gertrude Kihn",
-    "country":"Australia"
+  "deliveryAddress": {
+    "lastname": ". John Doe",
+    "country": "Australia"
   },
-  "card":{
-    "name":"Gertrude Kihn",
-    "cardNumber":"1234345656787890",
-    "cvc":"123",
-    "expiryMonth":"2030",
-    "expiryYear":"2030"
+  "card": {
+    "name": "John Doe",
+    "cardNumber": "1234345656787890",
+    "cvc": "123",
+    "expiryMonth": "2030",
+    "expiryYear": "2030"
   }
-
-
 }

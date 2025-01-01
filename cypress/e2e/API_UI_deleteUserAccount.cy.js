@@ -2,11 +2,15 @@ import { v4 as uuidv4 } from "uuid";
 import loginPage from "../support/pages/loginPage";
 import homePage from "../support/pages/homePage";
 
-//  Create user account through API and delete user account from UI 
+//  Create user account through API and delete user account from UI
 
 describe("Create Account API Test", () => {
+  let userEmail = uuidv4() + "johndoe@example.com";
+  let loginData = {
+    username: userEmail,
+    password: "SecurePassword123",
+  };
   it("should create an account successfully", () => {
-    let userEmail = uuidv4() + "johndoe@example.com";
     const url = "https://automationexercise.com/api/createAccount";
     const data = {
       name: "John Doe",
@@ -44,15 +48,12 @@ describe("Create Account API Test", () => {
     homePage.verifyHomePageIsLoaded();
     homePage.navigateToLogin_SignUpPage();
 
-    let loginData = {
-      email: userEmail,
-      password: "SecurePassword123",
-    };
+   
 
     loginPage.login(loginData);
-    // cy.contains("Delete Account").click();
-    // cy.contains("Your account has been permanently deleted!").should(
-    //   "be.visible"
-    // );
+    cy.contains("Delete Account").click();
+    cy.contains("Your account has been permanently deleted!").should(
+      "be.visible"
+    );
   });
 });

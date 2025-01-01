@@ -1,16 +1,16 @@
 {
   "production": {
-    "email": "c9d0edff-3def-449c-8a4b-52330a6f6625Parker32@gmail.com",
+    "username": "c9d0edff-3def-449c-8a4b-52330a6f6625Parker32@gmail.com",
     "password": "Passw0rd",
     "name": "Gertrude Kihn"
   },
   "test": {
-    "email": "test-Parker32@gmail.com",
+    "username": "test-Parker32@gmail.com",
     "password": "Passw0rd",
     "name": "Gertrude Kihn"
   },
   "staging": {
-    "email": "staging-Parker32@gmail.com",
+    "username": "staging-Parker32@gmail.com",
     "password": "Passw0rd",
     "name": "Gertrude Kihn"
   }
