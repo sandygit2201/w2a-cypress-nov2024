@@ -4,13 +4,13 @@ import homePage from "../../support/pages/homePage";
 
 //  Create user account through API and delete user account from UI
 
-describe("Create Account API Test",{ tags: ['@sanity' ]}, () => {
+describe("Create Account API Test",{ tags: ['@sanity' ,'@regression']}, () => {
   let userEmail = uuidv4() + "johndoe@example.com";
   let loginData = {
     username: userEmail,
     password: "SecurePassword123",
   };
-  it("should create an account successfully", () => {
+  it("should create an account successfully",{ tags: ['@sanity' ,'@regression']}, () => {
     const url = "https://automationexercise.com/api/createAccount";
     const data = {
       name: "John Doe",

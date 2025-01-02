@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run -b chrome -s 'cypress/e2e/automationexercise/*Sanity.cy.js'"
+    "test": "npx cypress run -b chrome -s 'cypress/e2e/automationexercise/*Sanity.cy.js'",
+    "test-cloud":"npx cypress run -s 'cypress/e2e/automationexercise/dotEnv.cy.js'  --record -k 011f6376-fc0b-43bf-a054-d0a2d5a1df5d --tag 'w2a'",
+    "sanity-cloud":"npx cypress run -s 'cypress/e2e/automationexercise/dotEnv.cy.js'  --record -k 011f6376-fc0b-43bf-a054-d0a2d5a1df5d --env grepTags=@sanity",
+    "sanity":"npx cypress run --env grepTags=@sanity",
+    "run-parallel":"npx cypress run -s 'cypress/e2e/automationexercise/*.cy.js'  --record -k 011f6376-fc0b-43bf-a054-d0a2d5a1df5d --parallel --ci-build-id 123"
+
   },
   "keywords": [],
   "author": "",

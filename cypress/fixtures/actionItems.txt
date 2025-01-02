@@ -1,7 +1,2 @@
-1. login to different env x
-2. cypress.env
-4. cypress cloud 
-5. cucumber 
-6. running tests through command prompt
 
-https://docs.cypress.io/app/core-concepts/writing-and-organizing-tests
+5. cucumber 

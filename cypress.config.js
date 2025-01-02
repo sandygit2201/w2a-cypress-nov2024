@@ -13,11 +13,13 @@ export default defineConfig({
     video:true,
     downloadsFolder:"cypress/fixtures/downloads",
     pageLoadTimeout:90000,
-    // retries:2,
+    projectId:"q2tniq",
+    retries:2,
     grepFilterSpecs: true,
     env:{
       userLogin:"fromEnvFile",
-      userName:process.env.username
+      userName:process.env.username,
+      password:process.env.password
     },
     setupNodeEvents(on, config) {
       on('task', {

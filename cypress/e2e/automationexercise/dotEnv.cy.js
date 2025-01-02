@@ -4,7 +4,8 @@ describe("dotenv", () => {
       cy.wait(1000);
   
       cy.get("#username").type(Cypress.env('userName'))
-      cy.wait(3000)
+      cy.get('#password').type(Cypress.env('password'))
+      cy.wait(5000)
     });
   
   });
