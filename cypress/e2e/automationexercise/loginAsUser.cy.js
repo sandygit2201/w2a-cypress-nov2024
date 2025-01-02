@@ -1,7 +1,7 @@
 import homePage from "../../support/pages/homePage";
 import loginPage from "../../support/pages/loginPage";
 
-describe("Login Page Tests", () => {
+describe("Login Page Tests", { tags: ["sanity"] }, () => {
   it("login as valid user", () => {
     // navigate to base url
     cy.visit("/");

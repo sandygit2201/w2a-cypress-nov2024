@@ -1,6 +1,5 @@
 describe("Get user", () => {
-
-    // Verify Response for a url with API on button click 
+  // Verify Response for a url with API on button click
   it("intercept user response", () => {
     cy.visit("https://reqres.in/");
 
@@ -13,10 +12,10 @@ describe("Get user", () => {
 
     // cy.wait("@getUser").its("response.statusCode").should("eq", 200);
 
-    cy.wait('@getUser').its('response').then((response)=>{
-
-        cy.log('Response Body::'+ JSON.stringify(response.body))
-
-    })
+    cy.wait("@getUser")
+      .its("response")
+      .then((response) => {
+        cy.log("Response Body::" + JSON.stringify(response.body));
+      });
   });
 });

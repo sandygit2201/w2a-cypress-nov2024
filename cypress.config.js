@@ -1,6 +1,8 @@
 import { defineConfig } from "cypress";
-
 import fs from 'fs'
+import dotenv from 'dotenv';
+const environment = process.env.ENV || 'qa';
+dotenv.config({path:`.env.${environment}`})
 
 export default defineConfig({
   e2e: {
@@ -11,7 +13,12 @@ export default defineConfig({
     video:true,
     downloadsFolder:"cypress/fixtures/downloads",
     pageLoadTimeout:90000,
-    retries:2,
+    // retries:2,
+    grepFilterSpecs: true,
+    env:{
+      userLogin:"fromEnvFile",
+      userName:process.env.username
+    },
     setupNodeEvents(on, config) {
       on('task', {
         addLogs(message) {

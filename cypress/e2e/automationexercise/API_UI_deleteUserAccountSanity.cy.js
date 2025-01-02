@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
-import loginPage from "../support/pages/loginPage";
-import homePage from "../support/pages/homePage";
+import loginPage from "../../support/pages/loginPage";
+import homePage from "../../support/pages/homePage";
 
 //  Create user account through API and delete user account from UI
 
-describe("Create Account API Test", () => {
+describe("Create Account API Test",{ tags: ['@sanity' ]}, () => {
   let userEmail = uuidv4() + "johndoe@example.com";
   let loginData = {
     username: userEmail,

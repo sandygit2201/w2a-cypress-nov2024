@@ -2,7 +2,7 @@ import homePage from "../../support/pages/homePage";
 import loginPage from "../../support/pages/loginPage";
 import productsPage from "../../support/pages/productsPage";
 
-describe("search product", () => {
+describe("search product", { tags: ["@sanity"] }, () => {
   it("search for a Product", () => {
     cy.visit("/");
     homePage.verifyHomePageIsLoaded();

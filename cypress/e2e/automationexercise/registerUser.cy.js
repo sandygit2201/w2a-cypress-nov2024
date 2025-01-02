@@ -35,7 +35,7 @@ describe("Register for user", () => {
     cy.contains("Account Created!").should("be.visible");
 
     let loginCredentials = {
-      email: newUserData.email,
+      username: newUserData.email,
       password: newUserData.password,
       name: newUserData.firstName + " " + newUserData.lastName,
     };

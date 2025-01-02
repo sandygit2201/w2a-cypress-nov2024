@@ -21,3 +21,5 @@ import './customCommands/apiCustomCommands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+import registerCypressGrep from '@cypress/grep/src/support'
+registerCypressGrep()
